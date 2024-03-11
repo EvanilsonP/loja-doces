@@ -2,6 +2,20 @@
     CARROSEL VAI AQUI
 </section>
 
+<section class="category">
+  <% if(categories != '') { %>
+    <% categories.forEach(function(categories, index){ %>
+    <a href="/#">
+      <div>
+        <img src="/img/<%= categories.image %>" alt="<%= categories.name %>" loading="lazy">
+      </div>
+      <div><%= categories.name %></div>
+    </a>
+    <% }) %>
+    <% } else { %>
+        <p>No items found.</p>
+<% } %>
+</section>
 
 <Section>
     <% if(candies != '') { %>
@@ -10,7 +24,7 @@
           <div>
             <img src="/img/<%= candy.image %>" alt="<%= candy.name %>" loading="lazy">
           </div>
-          <div class="pt-1"><%= candy.name %></div>
+          <div><%= candy.name %></div>
         </a>
         <% }) %>
         <% } else { %>
