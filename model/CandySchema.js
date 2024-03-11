@@ -18,7 +18,8 @@ const candySchema = new mongoose.Schema({
     },
 
     category: {
-        enum: ['Brownie', 'Bolo', 'Cone', 'Brigadeiro', 'Ovo'];
+        type: String,
+        enum: ['Brownie', 'Bolo', 'Cone', 'Brigadeiro', 'Ovo'],
         required: 'This field is required.'
     }
 });

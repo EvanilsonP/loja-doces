@@ -74,3 +74,36 @@ nav ul li a:hover {
     padding: 20px 0;
     text-align: center;
 }
+
+/* Estilos para a Section */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Estilos para cada item de doce */
+section a {
+    text-decoration: none;
+    color: #333; /* Cor do texto, ajuste conforme necessário */
+    margin: 5px; /* Margem ao redor de cada item */
+    width: 200px; /* Largura do bloco de cada item, ajuste conforme necessário */
+}
+
+section a:hover {
+    border: 1px solid #3498db; /* Borda ao passar o mouse, ajuste conforme necessário */
+}
+
+section img {
+    width: 100%; /* Ajusta a largura da imagem para ocupar 100% do bloco */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Borda arredondada, ajuste conforme necessário */
+    margin-right: 100px;
+}
+
+section div.pt-1 {
+    text-align: center;
+    margin-top: 5px; /* Espaçamento superior para o texto */
+}
+
+/* Adicione outros estilos conforme necessário para mais conteúdo ou personalização */

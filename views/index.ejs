@@ -4,6 +4,16 @@
 
 
 <Section>
-    <div>IMAGEM</div>
-    <div>NOME</div>
+    <% if(candies != '') { %>
+        <% candies.forEach(function(candy, index){ %>
+        <a href="/#">
+          <div>
+            <img src="/img/<%= candy.image %>" alt="<%= candy.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= candy.name %></div>
+        </a>
+        <% }) %>
+        <% } else { %>
+            <p>No items found.</p>
+    <% } %>
 </Section>

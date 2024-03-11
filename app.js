@@ -10,6 +10,7 @@ db();
 
 app.use(expressLayouts);
 app.use(express.static('public'));
+app.use(express.json());
 
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
