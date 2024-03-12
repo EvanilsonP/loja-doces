@@ -1,7 +1,7 @@
 const Candy = require('../model/CandySchema.js');
 const Category = require('../model/CategorySchema.js');
 
-
+// Home Page
 const homePage = async (req, res) => {
     try {
         const categories = await Category.find();
@@ -13,6 +13,7 @@ const homePage = async (req, res) => {
     }
 };
 
+// Create Candy
 const createCandy = async (req, res) => {
     const { name, description, image, category } = req.body;
     try {
@@ -24,6 +25,7 @@ const createCandy = async (req, res) => {
     }
 };
 
+// Create Category
 const createCategory = async (req, res) => {
     const { name, image } = req.body;
     try {
@@ -35,4 +37,16 @@ const createCategory = async (req, res) => {
     }
 }
 
-module.exports = { homePage, createCandy, createCategory };
+// Grab candy by its ID
+const candyID = async (req, res) => {
+    try {
+        const candyID = req.params.id;
+        const candyByID = await Candy.findById(candyID);
+        return res.status(200).json(candyID);
+        
+    } catch (error) {
+        return res.status(401).json(error);
+    }
+}
+
+module.exports = { homePage, createCandy, createCategory, candyID };

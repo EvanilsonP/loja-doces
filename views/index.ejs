@@ -2,10 +2,12 @@
     CARROSEL VAI AQUI
 </section>
 
+<h1>Categorias</h1>
+
 <section class="category">
   <% if(categories != '') { %>
     <% categories.forEach(function(categories, index){ %>
-    <a href="/#">
+    <a href="/categories">
       <div>
         <img src="/img/<%= categories.image %>" alt="<%= categories.name %>" loading="lazy">
       </div>
@@ -17,6 +19,7 @@
 <% } %>
 </section>
 
+<H1>Doces</H1>
 <Section>
     <% if(candies != '') { %>
         <% candies.forEach(function(candy, index){ %>
