@@ -1,1 +1,20 @@
-<h1>Hello</h1>
+<h1>Explore as categorias</h1>
+
+<nav">
+    <ul>
+      <li><a href="/">Inicio</a></li>
+    </ul>
+</nav>
+
+<div>
+    <% if(typeof category !== 'undefined' && category.length > 0) { %>
+        <% category.forEach(function(category, index){ %>
+            <div>
+                <img width="200" src="/img/<%= category.image %>" alt="<%= category.name %>" loading="lazy">
+            </div>
+            <div><%= category.name %></div>
+        <% }) %>
+        <% } else { %>
+            <p>Nenhum item encontrado.</p>
+        <% } %>
+</div>

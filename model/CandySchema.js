@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const candySchema = new mongoose.Schema({
+const CandySchema = new mongoose.Schema({
 
     name: {
         type: String,
@@ -24,4 +24,4 @@ const candySchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Candy', candySchema);
+module.exports = mongoose.model('Candy', CandySchema);

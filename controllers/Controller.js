@@ -3,8 +3,9 @@ const Category = require('../model/CategorySchema.js');
 
 // Home Page
 const homePage = async (req, res) => {
-    try {
-        const categories = await Category.find();
+    try { 
+        const limitNumber = 5;
+        const categories = await Category.find().limit(limitNumber);
         const candies = await Candy.find();
         res.render('index', { candies, categories });
         
@@ -39,14 +40,26 @@ const createCategory = async (req, res) => {
 
 // Grab candy by its ID
 const candyID = async (req, res) => {
+    let candyID = req.params.id;
     try {
-        const candyID = req.params.id;
         const candyByID = await Candy.findById(candyID);
-        return res.status(200).json(candyID);
+        return res.status(200).json(candyByID);
         
     } catch (error) {
         return res.status(401).json(error);
     }
-}
+};
 
-module.exports = { homePage, createCandy, createCategory, candyID };
+// Candy Category by its ID
+const categoryId = async (req, res) => {
+    const categoryId = req.params.id;
+    try {
+        const category = await Candy.find({ 'category': categoryId})
+        res.render('categories', { title: 'Categorias', category });
+
+    } catch (error) {
+        return res.status(401).json(error);
+    }
+};
+
+module.exports = { homePage, createCandy, createCategory, candyID, categoryId};

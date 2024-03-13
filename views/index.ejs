@@ -7,12 +7,12 @@
 <section class="category">
   <% if(categories != '') { %>
     <% categories.forEach(function(categories, index){ %>
-    <a href="/categories">
-      <div>
-        <img src="/img/<%= categories.image %>" alt="<%= categories.name %>" loading="lazy">
-      </div>
-      <div><%= categories.name %></div>
-    </a>
+      <a href="/categories/<%= categories.name %>">
+          <div>
+            <img src="/img/<%= categories.image %>" alt="<%= categories.name %>" loading="lazy">
+          </div>
+          <div><%= categories.name %></div>
+      </a>
     <% }) %>
     <% } else { %>
         <p>No items found.</p>
